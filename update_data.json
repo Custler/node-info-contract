@@ -1,0 +1,16 @@
+{
+  "new_node_info": {
+    "NodeVersion": "000050015",
+    "PrevNodeVersion": "000050013",
+    "LastCommit": "0xc7b2a7af27063cdd0414944a8c34ceb63c7f9dba",
+    "PrevCommit": "0xcc96e3938763e640cca86c62a4e66167581ec4f3",
+    "SupportedBlock": 27,
+    "PrevSupportedBlock": 26,
+    "UpdateByCron": true,
+    "UpdateStartTime": 0,
+    "UpdateDuration": 0,
+    "MinCLIversion": "000026012",
+    "DisableOldNodeValidate": false
+  },
+  "new_info_time": 1653640293
+}

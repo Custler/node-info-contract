@@ -1,0 +1,118 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"initial_node_info","type":"tuple"},
+				{"name":"code_deploy_time","type":"uint32"},
+				{"name":"info_deploy_time","type":"uint32"},
+				{"name":"initial_ABI","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "change_node_info",
+			"inputs": [
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"new_node_info","type":"tuple"},
+				{"name":"new_info_time","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getLastNodeInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"value0","type":"tuple"}
+			]
+		},
+		{
+			"name": "getABI",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "getALLinfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"value0","type":"tuple"},
+				{"name":"value1","type":"uint8"},
+				{"name":"value2","type":"uint32"},
+				{"name":"value3","type":"uint32"}
+			]
+		},
+		{
+			"name": "updateContractCode",
+			"inputs": [
+				{"name":"newcode","type":"cell"},
+				{"name":"new_code_time","type":"uint32"},
+				{"name":"new_ABI","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "node_info",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"node_info","type":"tuple"}
+			]
+		},
+		{
+			"name": "code_ver",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"code_ver","type":"uint8"}
+			]
+		},
+		{
+			"name": "code_updated_time",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"code_updated_time","type":"uint32"}
+			]
+		},
+		{
+			"name": "info_updated_time",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"info_updated_time","type":"uint32"}
+			]
+		},
+		{
+			"name": "ABI",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"ABI","type":"string"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"node_info","type":"tuple"},
+		{"name":"code_ver","type":"uint8"},
+		{"name":"code_updated_time","type":"uint32"},
+		{"name":"info_updated_time","type":"uint32"},
+		{"name":"ABI","type":"string"}
+	]
+}
