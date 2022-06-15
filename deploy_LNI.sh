@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+set -eE
 
-LNI_giver="0:c82cdbe63dbe05841af073d2d5f1299ee2f89430acfaa4048748b24841df167f"
-LNI_seed="estate indicate weekend embark witness grief loyal voice key achieve wreck quiz"
+# LNI_giver="0:c82cdbe63dbe05841af073d2d5f1299ee2f89430acfaa4048748b24841df167f"
+# LNI_seed="estate indicate weekend embark witness grief loyal voice key achieve wreck quiz"
 NANO_AMOUNT=2000000000
 BOUNCE="false"
 Contract_Name="LastNodeInfo"
@@ -9,7 +10,7 @@ Contract_Name="LastNodeInfo"
 INIT_FILE="init_data.json"
 DATA_FILE="update_data.json"
 
-everdev sol compile ${Contract_Name}.sol
+# everdev sol compile ${Contract_Name}.sol
 
 Code="${Contract_Name}.tvc"
 ABI="${Contract_Name}.abi.json"
@@ -17,14 +18,16 @@ ABI="${Contract_Name}.abi.json"
 KEYS_FILE="${Contract_Name}.keys.json"
 ADDR_FILE="${Contract_Name}.addr"
 
+if [[ ! -s $Code ]] || [[ ! -s $ABI ]] || [[ ! -s $KEYS_FILE ]];then
+  echo "###-ERROR(line $LINENO): Check tvc, abi and keys files exist!"
+  exit 1
+fi
+
 Calc_Addr="$(tonos-cli -j genaddr $Code --abi $ABI --setkey $KEYS_FILE --wc 0|jq -r '.raw_address' | tee "${ADDR_FILE}")"
+echo
 echo "Calculated addr: $Calc_Addr"
-
-tonos-cli call $LNI_giver sendTransaction \
-"{\"dest\":\"${Calc_Addr}\",\"value\":${NANO_AMOUNT},\"bounce\":$BOUNCE,\"flags\":3,\"payload\":\"\"}" \
---abi SafeMultisigWallet.abi.json --sign "$LNI_seed"
-
-#### Address ready to deploy
+echo "        Network: $(tonos-cli -j config|jq -r '.url')"
+echo
 
 # Prepare init data
 cat <<_ENDCNT_ > $INIT_FILE
@@ -32,7 +35,7 @@ cat <<_ENDCNT_ > $INIT_FILE
   "initial_node_info": {
     "NodeVersion": "000050015",
     "PrevNodeVersion": "000050013",
-    "LastCommit": "0xc7b2a7af27063cdd0414944a8c34ceb63c7f9dba",
+    "LastCommit": "0xa0bc069b0459b50e4be7ed7d07c0aef0380ec2f7",
     "PrevCommit": "0xcc96e3938763e640cca86c62a4e66167581ec4f3",
     "SupportedBlock": 27,
     "PrevSupportedBlock": 26,
@@ -59,13 +62,28 @@ initial_ABI="$(cat ${Contract_Name}.abi.hex)"
 cat ${INIT_FILE} |jq ".code_deploy_time = ${code_deploy_time} | .info_deploy_time = ${info_deploy_time} | .initial_ABI = \"${initial_ABI}\"" > ${INIT_FILE}.tmp
 mv -f ${INIT_FILE}.tmp ${INIT_FILE}
 
+echo "Info for deploy:"
+cat $INIT_FILE |jq ''
+
+#### Address ready to deploy
+read -p "### CHECK INFO TWICE!!! Is this a right address?  (y/n)? " </dev/tty answer
+case ${answer:0:1} in
+    y|Y )
+        echo "Deploing..."
+    ;;
+    * )
+        echo "Cancelled."
+        exit 1
+    ;;
+esac
+
 #Deploy contract
 tonos-cli deploy --wc 0 --abi ${ABI} --sign ${KEYS_FILE} ${Code} ${INIT_FILE}
 
 
 exit 0
 
-####################
+####################s
 ## Examples:
 
 tonos-cli -j run --abi ${Contract_Name}.abi.json $(cat ${Contract_Name}.addr) getALLinfo {}

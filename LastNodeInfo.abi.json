@@ -6,7 +6,7 @@
 		{
 			"name": "constructor",
 			"inputs": [
-				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"initial_node_info","type":"tuple"},
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateStartTime","type":"uint32"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"initial_node_info","type":"tuple"},
 				{"name":"code_deploy_time","type":"uint32"},
 				{"name":"info_deploy_time","type":"uint32"},
 				{"name":"initial_ABI","type":"string"}
@@ -17,7 +17,7 @@
 		{
 			"name": "change_node_info",
 			"inputs": [
-				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"new_node_info","type":"tuple"},
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateStartTime","type":"uint32"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"new_node_info","type":"tuple"},
 				{"name":"new_info_time","type":"uint32"}
 			],
 			"outputs": [
@@ -28,7 +28,7 @@
 			"inputs": [
 			],
 			"outputs": [
-				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"value0","type":"tuple"}
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateStartTime","type":"uint32"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"value0","type":"tuple"}
 			]
 		},
 		{
@@ -44,7 +44,7 @@
 			"inputs": [
 			],
 			"outputs": [
-				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"value0","type":"tuple"},
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateStartTime","type":"uint32"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"value0","type":"tuple"},
 				{"name":"value1","type":"uint8"},
 				{"name":"value2","type":"uint32"},
 				{"name":"value3","type":"uint32"}
@@ -65,7 +65,7 @@
 			"inputs": [
 			],
 			"outputs": [
-				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"node_info","type":"tuple"}
+				{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateStartTime","type":"uint32"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"node_info","type":"tuple"}
 			]
 		},
 		{
@@ -109,7 +109,7 @@
 		{"name":"_pubkey","type":"uint256"},
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
-		{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"node_info","type":"tuple"},
+		{"components":[{"name":"NodeVersion","type":"uint24"},{"name":"PrevNodeVersion","type":"uint24"},{"name":"LastCommit","type":"uint180"},{"name":"PrevCommit","type":"uint180"},{"name":"SupportedBlock","type":"uint8"},{"name":"PrevSupportedBlock","type":"uint8"},{"name":"UpdateByCron","type":"bool"},{"name":"UpdateStartTime","type":"uint32"},{"name":"UpdateDuration","type":"uint32"},{"name":"MinCLIversion","type":"uint24"},{"name":"DisableOldNodeValidate","type":"bool"}],"name":"node_info","type":"tuple"},
 		{"name":"code_ver","type":"uint8"},
 		{"name":"code_updated_time","type":"uint32"},
 		{"name":"info_updated_time","type":"uint32"},

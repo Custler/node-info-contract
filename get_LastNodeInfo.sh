@@ -25,12 +25,18 @@ source "${SCRIPT_DIR}/functions.shinc"
 
 #=================================================
 # Get LNIC boc
-OUTPUT="$(Get_SC_current_state "$LNIC_ADDRESS")"
-if [[ -z  "$(echo $OUTPUT | grep 'written StateInit of account')" ]];then
-    echo "###-ERROR(line $LINENO): Cannot get LNIC account state. Can't continue. Sorry."
-    exit 1
-fi
 
+if [[ "$(Get_Account_Info "$LNIC_ADDRESS"|awk '{print $1}')" != "Active" ]];then
+    echo "###-ERROR(line $LINENO): LNIC account not found. Can't continue. Sorry."
+    exit 1
+else
+    OUTPUT="$(Get_SC_current_state "$LNIC_ADDRESS")"
+    if [[ $? -ne 0 ]] || [[ -z  "$(echo $OUTPUT | grep 'written StateInit of account')" ]]
+    then
+        echo "###-ERROR(line $LINENO): Cannot get LNIC account state. Can't continue. Sorry."
+        exit 1
+    fi
+fi
 #=================================================
 # Get LNIC ABI from contract
 # LastNodeInfo.abi.json
