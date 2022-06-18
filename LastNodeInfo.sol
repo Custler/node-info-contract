@@ -13,6 +13,8 @@ struct NodeInfo {
     uint180 PrevCommit;             // cc96e3938763e640cca86c62a4e66167581ec4f3
     uint8   SupportedBlock;         // 27
     uint8   PrevSupportedBlock;     // 26
+    uint24  ConsoleVersion;         // 000001280  - means 0.1.280
+    uint180 ConsoleCommit;          // a69b0c4b8fe2c95eaea4145dffba9734d8570070
     bool    UpdateByCron;           // true - if allowed autoupdate by cron; false - if it is must be updated by hands
     uint32  UpdateStartTime;        // Time to start update  period (UNNIX time)
     uint32  UpdateDuration;         // time period for all network node for update. 
