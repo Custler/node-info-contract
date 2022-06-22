@@ -9,10 +9,10 @@
     "ConsoleVersion": "000001280",
     "ConsoleCommit": "0xa69b0c4b8fe2c95eaea4145dffba9734d8570070",
     "UpdateByCron": true,
-    "UpdateStartTime": 0,
-    "UpdateDuration": 0,
+    "UpdateStartTime": 1656005893,
+    "UpdateDuration": 456000,
     "MinCLIversion": "000026012",
     "DisableOldNodeValidate": false
   },
-  "new_info_time": 1655551649
+  "new_info_time": 1655907525
 }
