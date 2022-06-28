@@ -67,7 +67,7 @@ exit 0
 # examples
 . ./env.sh
 . ./functions.shinc
-./get_LastNodeInfo.sh | grep -v 'Version OK' | jq -r '.node_info.LastCommit' | xargs -I {} bash -c 'dec2hex {}'|tr "[:upper:]" "[:lower:]"
+./get_LastNodeInfo.sh | grep -v 'Version OK' | jq -r '.node_info.LastCommit' 
 # output: c7b2a7af27063cdd0414944a8c34ceb63c7f9dba
 # ))
 

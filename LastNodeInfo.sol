@@ -9,12 +9,12 @@ pragma AbiHeader expire;
 struct NodeInfo {
     uint24  NodeVersion;            // 000050015 - means 0.50.15 - each number converto to xxx
     uint24  PrevNodeVersion;        // 05013
-    uint180 LastCommit;             // c7b2a7af27063cdd0414944a8c34ceb63c7f9dba
-    uint180 PrevCommit;             // cc96e3938763e640cca86c62a4e66167581ec4f3
+    string  LastCommit;             // c7b2a7af27063cdd0414944a8c34ceb63c7f9dba
+    string  PrevCommit;             // cc96e3938763e640cca86c62a4e66167581ec4f3
     uint8   SupportedBlock;         // 27
     uint8   PrevSupportedBlock;     // 26
     uint24  ConsoleVersion;         // 000001280  - means 0.1.280
-    uint180 ConsoleCommit;          // a69b0c4b8fe2c95eaea4145dffba9734d8570070
+    string  ConsoleCommit;          // a69b0c4b8fe2c95eaea4145dffba9734d8570070
     bool    UpdateByCron;           // true - if allowed autoupdate by cron; false - if it is must be updated by hands
     uint32  UpdateStartTime;        // Time to start update  period (UNNIX time)
     uint32  UpdateDuration;         // time period for all network node for update. 

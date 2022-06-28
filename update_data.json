@@ -2,17 +2,17 @@
   "new_node_info": {
     "NodeVersion": "000050021",
     "PrevNodeVersion": "000050015",
-    "LastCommit": "0x5c3951a4de03833a49079d1c07ad5a05798df169",
-    "PrevCommit": "0xa0bc069b0459b50e4be7ed7d07c0aef0380ec2f7",
+    "LastCommit": "0c83450fbdcb15758bedac322441bcc410625378",
+    "PrevCommit": "a0bc069b0459b50e4be7ed7d07c0aef0380ec2f7",
     "SupportedBlock": 30,
     "PrevSupportedBlock": 27,
     "ConsoleVersion": "000001280",
-    "ConsoleCommit": "0xa69b0c4b8fe2c95eaea4145dffba9734d8570070",
+    "ConsoleCommit": "00ec448b60d2b3ce99c1df96b6ad789fa8095f14",
     "UpdateByCron": true,
-    "UpdateStartTime": 1656005893,
-    "UpdateDuration": 456000,
+    "UpdateStartTime": 0,
+    "UpdateDuration": 0,
     "MinCLIversion": "000026012",
     "DisableOldNodeValidate": false
   },
-  "new_info_time": 1655907525
+  "new_info_time": 1656387564
 }
